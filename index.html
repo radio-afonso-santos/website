@@ -1,0 +1,186 @@
+<!--
+  Página inicial do website para a
+  Rádio Afonso Santos
+ 
+  Website para a Rádio Afonso Santos
+  https://github.com/radio-afonso-santos/website
+ 
+  Uma rádio criada com ajuda do software Open Source AzuraCast
+  https://azuracast.com
+  https://github.com/AzuraCast/AzuraCast
+ 
+  Afonso Santos
+  http://afonsosantos.x10.mx
+  https://github.com/afonsosantos
+ 
+  Criado em 07/2019
+ 
+  Licença: MIT
+-->
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="https://kit.fontawesome.com/dbee1ad334.js"></script>
+    <title>Rádio Afonso Santos</title>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-dark bg-primary">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/logotipo.png" width="64px" alt="Rádio Afonso Santos" />
+        Rádio Afonso Santos
+      </a>
+      <h5><span id="ouvintes" class="badge badge-dark"></span></h5>
+    </nav>
+    <!-- A TOCAR -->
+    <div class="jumbotron">
+      <div class="container">
+        <div class="row">
+          <div class="col-auto">
+            <img src="" width="110px" id="imagem" class="rounded img-fluid" />
+          </div>
+          <div class="col-auto">
+            <h4><span id="status" class="status badge badge-danger"></span></h4>
+            <h5><span id="dj" class="badge badge-primary"></span></h5>
+            <h4 id="musica" class="font-weight-bold"></h4>
+            <h5 id="artista"></h5>
+            <!-- REPRODUTOR -->
+            <audio id="reprodutor" preload="none"></audio>
+            <!-- CONTROLOS REPRODUTOR -->
+            <div>
+              <div class="my-4"></div>
+              <button type="button" id="reproduzir" class="btn btn-transparent">
+                <i class="fas fa-play-circle fa-lg"></i>
+              </button>
+              <button type="button" id="parar" class="btn btn-transparent">
+                <i class="fas fa-pause-circle fa-lg"></i>
+              </button>
+              <input type="range" id="volume" min="0" max="1" step="0.1" value="0.2" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- SOBRE E FICHEIROS PLAYLIST -->
+    <div class="container">
+      <div class="row">
+        <!-- SOBRE -->
+        <div class="col-sm">
+          <h3 id="sobre">Sobre</h3>
+          <div class="my-4"></div>
+          <p>
+            A Rádio Afonso Santos surgiu em 2018, e começou com um hobby de um jovem com gosto pela rádio e as tecnologias que fazem a rádio
+            funcionar. Hoje em dia, apesar de continuar a ser um hobby, a Rádio Afonso Santos já está online 24/7 com uma transmissão contínua da
+            melhor música. Ocasionalmente, DJ's revelam os seus talentos na nossa rádio, por isso fica atento às nossas redes sociais, listadas no
+            fundo da página.
+          </p>
+          <h3>Horário</h3>
+          <div class="my-4"></div>
+          <strong>07h00 às 21h00</strong> - A melhor música!
+          <div class="mt-2 mb-2"></div>
+          <strong>21h00 às 7h00</strong> - Synthwave Dawn
+        </div>
+        <!-- FICHEIROS -->
+        <div class="col-sm">
+          <h3 id="ouvir">Ouvir</h3>
+          <div class="my-4"></div>
+          <!-- M3U -->
+          <h4>Ficheiro <span class="badge badge-dark">M3U</span></h4>
+          <p>Utilize este ficheiro em qualquer reprodutor suportado, como o seu carro, app, etc.</p>
+          <a href="https://painel.radio-afonsosantos.tk/public/1/playlist/m3u">
+            <button type="button" class="btn btn-primary"><i class="fas fa-download mr-1"></i> Transferir</button>
+          </a>
+          <div class="my-4"></div>
+          <!-- PLS -->
+          <h4>Ficheiro <span class="badge badge-dark">PLS</span></h4>
+          <p>Um formato menos utilizado, mas que poderá ser útil.</p>
+          <a href="https://painel.radio-afonsosantos.tk/public/1/playlist/pls">
+            <button type="button" class="btn btn-primary"><i class="fas fa-download mr-1"></i> Transferir</button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- CONTATOS -->
+    <div class="my-4"></div>
+    <div class="jumbotron">
+      <div class="container">
+        <h3 id="contatos">Contatos</h3>
+        <p>Utilize o formulário ou as redes sociais abaixo para contactar a Rádio Afonso Santos, independentemente do assunto</p>
+        <div class="row">
+          <!-- FORMULÁRIO CONTATO-->
+          <div class="p-4 col-sm">
+            <h4>Formulário de contato</h4>
+            <form name="contatos" method="POST" data-netlify="true">
+              <div class="form-group">
+                <label>Nome</label>
+                <input type="text" class="form-control" name="nome" placeholder="O seu nome" />
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" name="email" placeholder="O seu email" />
+              </div>
+              <div class="form-group">
+                <label>Assunto</label>
+                <input type="text" class="form-control" name="assunto" placeholder="Sugestão, erro no website, ..." />
+              </div>
+              <div class="form-group">
+                <label>Mensagem</label>
+                <textarea class="form-control" name="mensagem" cols="30" rows="5" placeholder="A sua mensagem"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+          </div>
+          <div class="p-4 col-sm">
+            <h4>Redes sociais</h4>
+            <div class="mt-4"></div>
+            <!-- DISCORD -->
+            <div class="text-center d-flex justify-content-center">
+              <div class="card border-primary mb-3" style="max-width: 20rem;">
+                <div class="card-header">
+                  <a href="https://discord.gg/dm8Ze7z" target="_blank">
+                    <i style="color: #ffffff;" class="fab fa-discord fa-3x"></i>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">O nosso servidor Discord, onde poderás ouvir a tua rádio e estar dentro de todas as notícias.</p>
+                </div>
+              </div>
+              <div class="mr-3 ml-3"></div>
+              <!-- FACEBOOK -->
+              <div class="card border-primary mb-3" style="max-width: 20rem;">
+                <div class="card-header">
+                  <a href="#!">
+                    <i style="color: #ffffff;" class="fab fa-facebook fa-3x"></i>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">A nossa página Facebook, onde informaremos todos os eventos da tua rádio.<br /><strong>(em breve)</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer mb-4">
+      <div class="container">
+        <span class="text-muted"><small>&copy; 2019 - RÁDIO AFONSO SANTOS</small></span>
+      </div>
+    </footer>
+
+    <!-- BIBLIOTECAS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/popper.min.js"></script>
+
+    <!-- SCRIPTS JAVASCRIPT -->
+    <script src="js/nowplaying.js"></script>
+    <script src="js/player.js"></script>
+  </body>
+</html>
