@@ -20,13 +20,14 @@
 
 $(document).ready(function() {
   // Variáveis globais
-  var url = 'https://painel.radio-afonsosantos.tk/radio/8000/radio.mp3?1562112982';
+  var url =
+    "https://painel.radio-afonsosantos.tk/radio/8000/radio.mp3?1562112982";
 
   // Objetos da DOM
-  var reprodutor = document.getElementById('reprodutor');
-  var reproduzir = document.getElementById('reproduzir');
-  var parar = document.getElementById('parar');
-  var volume = document.getElementById('volume');
+  var reprodutor = document.getElementById("reprodutor");
+  var reproduzir = document.getElementById("reproduzir");
+  var parar = document.getElementById("parar");
+  var volume = document.getElementById("volume");
 
   /*
    * Tarefas inciais
@@ -45,18 +46,18 @@ $(document).ready(function() {
 
   /*
    * Funções para manipulação da stream
-   * reproduzir, parar, volume_menos, volume_mais
+   * reproduzir, parar e controlo do volume
    */
 
   // Reproduzir
-  reproduzir.addEventListener('click', function() {
+  reproduzir.addEventListener("click", function() {
     reprodutor.play();
     reproduzir.disabled = true;
     parar.disabled = false;
   });
 
   // Parar
-  parar.addEventListener('click', function() {
+  parar.addEventListener("click", function() {
     reprodutor.pause();
     reprodutor.src = reprodutor.src;
     reproduzir.disabled = false;
@@ -64,7 +65,7 @@ $(document).ready(function() {
   });
 
   // Controla o volume do reprodutor
-  volume.addEventListener('change', function() {
+  volume.addEventListener("change", function() {
     reprodutor.volume = this.value;
   });
 });
