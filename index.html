@@ -59,7 +59,14 @@
               <button type="button" id="parar" class="btn btn-transparent">
                 <i class="fas fa-pause-circle fa-lg"></i>
               </button>
-              <input type="range" id="volume" min="0" max="1" step="0.1" value="0.2" />
+              <input
+                type="range"
+                id="volume"
+                min="0"
+                max="1"
+                step="0.1"
+                value="0.2"
+              />
             </div>
           </div>
         </div>
@@ -73,10 +80,13 @@
           <h3 id="sobre">Sobre</h3>
           <div class="my-4"></div>
           <p>
-            A Rádio Afonso Santos surgiu em 2018, e começou com um hobby de um jovem com gosto pela rádio e as tecnologias que fazem a rádio
-            funcionar. Hoje em dia, apesar de continuar a ser um hobby, a Rádio Afonso Santos já está online 24/7 com uma transmissão contínua da
-            melhor música. Ocasionalmente, DJ's revelam os seus talentos na nossa rádio, por isso fica atento às nossas redes sociais, listadas no
-            fundo da página.
+            A Rádio Afonso Santos surgiu em 2018, e começou com um hobby de um
+            jovem com gosto pela rádio e as tecnologias que fazem a rádio
+            funcionar. Hoje em dia, apesar de continuar a ser um hobby, a Rádio
+            Afonso Santos já está online 24/7 com uma transmissão contínua da
+            melhor música. Ocasionalmente, DJ's revelam os seus talentos na
+            nossa rádio, por isso fica atento às nossas redes sociais, listadas
+            no fundo da página.
           </p>
           <h3>Horário</h3>
           <div class="my-4"></div>
@@ -90,16 +100,23 @@
           <div class="my-4"></div>
           <!-- M3U -->
           <h4>Ficheiro <span class="badge badge-dark">M3U</span></h4>
-          <p>Utilize este ficheiro em qualquer reprodutor suportado, como o seu carro, app, etc.</p>
+          <p>
+            Utilize este ficheiro em qualquer reprodutor suportado, como o seu
+            carro, app, etc.
+          </p>
           <a href="https://painel.radio-afonsosantos.tk/public/1/playlist/m3u">
-            <button type="button" class="btn btn-primary"><i class="fas fa-download mr-1"></i> Transferir</button>
+            <button type="button" class="btn btn-primary">
+              <i class="fas fa-download mr-1"></i> Transferir
+            </button>
           </a>
           <div class="my-4"></div>
           <!-- PLS -->
           <h4>Ficheiro <span class="badge badge-dark">PLS</span></h4>
           <p>Um formato menos utilizado, mas que poderá ser útil.</p>
           <a href="https://painel.radio-afonsosantos.tk/public/1/playlist/pls">
-            <button type="button" class="btn btn-primary"><i class="fas fa-download mr-1"></i> Transferir</button>
+            <button type="button" class="btn btn-primary">
+              <i class="fas fa-download mr-1"></i> Transferir
+            </button>
           </a>
         </div>
       </div>
@@ -109,7 +126,10 @@
     <div class="jumbotron">
       <div class="container">
         <h3 id="contatos">Contatos</h3>
-        <p>Utilize o formulário ou as redes sociais abaixo para contactar a Rádio Afonso Santos, independentemente do assunto</p>
+        <p>
+          Utilize o formulário ou as redes sociais abaixo para contactar a Rádio
+          Afonso Santos, independentemente do assunto
+        </p>
         <div class="row">
           <!-- FORMULÁRIO CONTATO-->
           <div class="p-4 col-sm">
@@ -117,19 +137,43 @@
             <form name="contatos" method="POST" data-netlify="true">
               <div class="form-group">
                 <label>Nome</label>
-                <input type="text" class="form-control" name="nome" placeholder="O seu nome" />
+                <input
+                  type="text"
+                  class="form-control"
+                  name="nome"
+                  placeholder="O seu nome"
+                  required
+                />
               </div>
               <div class="form-group">
                 <label>Email</label>
-                <input type="email" class="form-control" name="email" placeholder="O seu email" />
+                <input
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  placeholder="O seu email"
+                  required
+                />
               </div>
               <div class="form-group">
                 <label>Assunto</label>
-                <input type="text" class="form-control" name="assunto" placeholder="Sugestão, erro no website, ..." />
+                <input
+                  type="text"
+                  class="form-control"
+                  name="assunto"
+                  placeholder="Sugestão, erro no website, ..."
+                />
               </div>
               <div class="form-group">
                 <label>Mensagem</label>
-                <textarea class="form-control" name="mensagem" cols="30" rows="5" placeholder="A sua mensagem"></textarea>
+                <textarea
+                  class="form-control"
+                  name="mensagem"
+                  cols="30"
+                  rows="5"
+                  placeholder="A sua mensagem"
+                  required
+                ></textarea>
               </div>
               <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
@@ -146,7 +190,10 @@
                   </a>
                 </div>
                 <div class="card-body">
-                  <p class="card-text">O nosso servidor Discord, onde poderás ouvir a tua rádio e estar dentro de todas as notícias.</p>
+                  <p class="card-text">
+                    O nosso servidor Discord, onde poderás ouvir a tua rádio e
+                    estar dentro de todas as notícias.
+                  </p>
                 </div>
               </div>
               <div class="mr-3 ml-3"></div>
@@ -154,11 +201,17 @@
               <div class="card border-primary mb-3" style="max-width: 20rem;">
                 <div class="card-header">
                   <a href="#!">
-                    <i style="color: #ffffff;" class="fab fa-facebook fa-3x"></i>
+                    <i
+                      style="color: #ffffff;"
+                      class="fab fa-facebook fa-3x"
+                    ></i>
                   </a>
                 </div>
                 <div class="card-body">
-                  <p class="card-text">A nossa página Facebook, onde informaremos todos os eventos da tua rádio.<br /><strong>(em breve)</strong></p>
+                  <p class="card-text">
+                    A nossa página Facebook, onde informaremos todos os eventos
+                    da tua rádio.<br /><strong>(em breve)</strong>
+                  </p>
                 </div>
               </div>
             </div>
@@ -170,7 +223,9 @@
     <!-- FOOTER -->
     <footer class="footer mb-4">
       <div class="container">
-        <span class="text-muted"><small>&copy; 2019 - RÁDIO AFONSO SANTOS</small></span>
+        <span class="text-muted"
+          ><small>&copy; 2019 - RÁDIO AFONSO SANTOS</small></span
+        >
       </div>
     </footer>
 
