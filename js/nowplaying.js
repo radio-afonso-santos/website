@@ -25,12 +25,19 @@ $(document).ready(function() {
   var tempo = 5000;
 
   // Elementos da DOM
+
+  // A Tocar
   var artista = document.getElementById('artista');
   var musica = document.getElementById('musica');
   var imagem = document.getElementById('imagem');
   var status = document.getElementById('status');
   var dj = document.getElementById('dj');
   var ouvintes = document.getElementById('ouvintes');
+
+  // Vai Tocar
+  var imagem_seguinte = document.getElementById('imagem-seguinte');
+  var musica_seguinte = document.getElementById('musica-seguinte');
+  var artista_seguinte = document.getElementById('artista-seguinte');
 
   // Executa a cada 5 segundos
   setInterval(function() {
@@ -53,9 +60,16 @@ $(document).ready(function() {
       }
 
       // Atualiza sempre estes dados abaixo
+
+      // A Tocar
       $(imagem).attr('src', resposta.now_playing.song.art);
       $(artista).text(resposta.now_playing.song.artist);
       $(musica).text(resposta.now_playing.song.title);
+
+      // Vai Tocar
+      $(imagem_seguinte).attr('src', resposta.playing_next.song.art);
+      $(artista_seguinte).text(resposta.playing_next.song.artist);
+      $(musica_seguinte).text(resposta.playing_next.song.title);
     });
   }, tempo);
 });
