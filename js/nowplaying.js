@@ -46,9 +46,13 @@ $(document).ready(function() {
       if (resposta.live.is_live == true) {
         // DJ Online
         $(status).text('DJ ao Vivo');
+        // Mostra o nome do DJ
+        $(dj).show();
         $(dj).text(resposta.live.streamer_name);
       } else {
         // Transmissão Normal
+        // Esconde o nome do DJ, depois de terminar a transmissão
+        $(dj).hide();
         $(status).text('A Tocar');
       }
 
