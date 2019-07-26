@@ -44,9 +44,11 @@ $(document).ready(function() {
     $.get(url).done(function(resposta) {
       // Verifica se algum DJ está a transmitir
       if (resposta.live.is_live == true) {
+        // DJ Online
         $(status).text('DJ ao Vivo');
         $(dj).text(resposta.live.streamer_name);
       } else {
+        // Transmissão Normal
         $(status).text('A Tocar');
       }
 
