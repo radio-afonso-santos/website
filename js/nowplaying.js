@@ -46,7 +46,7 @@ $(document).ready(function() {
   var artista_seguinte = document.getElementById('artista-seguinte');
 
   // Obtém os dados apartir da Websocket
-  sub.on('message', function(message, message_metadata) {
+  sub.on('message', function(message) {
     resposta = JSON.parse(message);
     // Verifica se algum DJ está a transmitir
     if (resposta.live.is_live == true) {
