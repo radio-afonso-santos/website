@@ -26,7 +26,7 @@ $(document).ready(function() {
   var sub = new NchanSubscriber(
     'https://painel.radio-afonsosantos.tk/api/live/nowplaying/1'
   );
-  var nowPlaying;
+  var resposta;
 
   /*
    *  Elementos da DOM
@@ -47,7 +47,7 @@ $(document).ready(function() {
 
   // Obtém os dados apartir da Websocket
   sub.on('message', function(message, message_metadata) {
-    nowPlaying = JSON.parse(message);
+    resposta = JSON.parse(message);
     // Verifica se algum DJ está a transmitir
     if (resposta.live.is_live == true) {
       // DJ Online
@@ -68,7 +68,7 @@ $(document).ready(function() {
     } else if (resposta.listeners.current == 1) {
       $(ouvintes).text(resposta.listeners.unique + ' ouvinte');
     } else if (resposta.listeners.unique == 0) {
-      $(ouvintes).text('Nenhum ouvinte');
+      $(ouvintes).text('Nenhum Ouvinte');
     }
 
     // Atualiza sempre estes dados abaixo
