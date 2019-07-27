@@ -19,12 +19,18 @@
  */
 
 $(document).ready(function() {
-  // Variáveis globais
-  var url = 'https://painel.radio-afonsosantos.tk/api/nowplaying/1';
-  // 5000 = 5 segundos
-  var tempo = 5000;
+  /*
+   *  Variáveis Globais
+   */
 
-  // Elementos da DOM
+  var sub = new NchanSubscriber(
+    'https://painel.radio-afonsosantos.tk/api/live/nowplaying/1'
+  );
+  var nowPlaying;
+
+  /*
+   *  Elementos da DOM
+   */
 
   // A Tocar
   var artista = document.getElementById('artista');
@@ -39,43 +45,45 @@ $(document).ready(function() {
   var musica_seguinte = document.getElementById('musica-seguinte');
   var artista_seguinte = document.getElementById('artista-seguinte');
 
-  // Executa a cada 5 segundos
-  setInterval(function() {
-    $.get(url).done(function(resposta) {
-      // Verifica se algum DJ está a transmitir
-      if (resposta.live.is_live == true) {
-        // DJ Online
-        $(status).text('DJ ao Vivo');
-        // Mostra o nome do DJ
-        $(dj).show();
-        $(dj).text(resposta.live.streamer_name);
-      } else {
-        // Transmissão Normal
-        // Esconde o nome do DJ, depois de terminar a transmissão
-        $(dj).hide();
-        $(status).text('A Tocar');
-      }
+  // Obtém os dados apartir da Websocket
+  sub.on('message', function(message, message_metadata) {
+    nowPlaying = JSON.parse(message);
+    // Verifica se algum DJ está a transmitir
+    if (resposta.live.is_live == true) {
+      // DJ Online
+      $(status).text('DJ ao Vivo');
+      // Mostra o nome do DJ
+      $(dj).show();
+      $(dj).text(resposta.live.streamer_name);
+    } else {
+      // Transmissão Normal
+      // Esconde o nome do DJ, depois de terminar a transmissão
+      $(dj).hide();
+      $(status).text('A Tocar');
+    }
 
-      // Verifica se é "ouvinte" ou "ouvintes"
-      if (resposta.listeners.current > 1) {
-        $(ouvintes).text(resposta.listeners.unique + ' ouvintes');
-      } else if (resposta.listeners.current == 1) {
-        $(ouvintes).text(resposta.listeners.unique + ' ouvinte');
-      } else if (resposta.listeners.unique == 0) {
-        $(ouvintes).text('Nenhum ouvinte');
-      }
+    // Verifica se é "ouvinte" ou "ouvintes"
+    if (resposta.listeners.current > 1) {
+      $(ouvintes).text(resposta.listeners.unique + ' ouvintes');
+    } else if (resposta.listeners.current == 1) {
+      $(ouvintes).text(resposta.listeners.unique + ' ouvinte');
+    } else if (resposta.listeners.unique == 0) {
+      $(ouvintes).text('Nenhum ouvinte');
+    }
 
-      // Atualiza sempre estes dados abaixo
+    // Atualiza sempre estes dados abaixo
 
-      // A Tocar
-      $(imagem).attr('src', resposta.now_playing.song.art);
-      $(artista).text(resposta.now_playing.song.artist);
-      $(musica).text(resposta.now_playing.song.title);
+    // A Tocar
+    $(imagem).attr('src', resposta.now_playing.song.art);
+    $(artista).text(resposta.now_playing.song.artist);
+    $(musica).text(resposta.now_playing.song.title);
 
-      // Vai Tocar
-      $(imagem_seguinte).attr('src', resposta.playing_next.song.art);
-      $(artista_seguinte).text(resposta.playing_next.song.artist);
-      $(musica_seguinte).text(resposta.playing_next.song.title);
-    });
-  }, tempo);
+    // Vai Tocar
+    $(imagem_seguinte).attr('src', resposta.playing_next.song.art);
+    $(artista_seguinte).text(resposta.playing_next.song.artist);
+    $(musica_seguinte).text(resposta.playing_next.song.title);
+  });
+
+  // Inicia o nchan
+  sub.start();
 });
