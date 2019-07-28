@@ -24,7 +24,7 @@ $(document).ready(function() {
    */
 
   var sub = new NchanSubscriber(
-    'https://painel.radio-afonsosantos.tk/api/live/nowplaying/1'
+    'https://painel.radio-afonsosantos.tk/api/live/nowplaying/radioafonsosantos'
   );
   var resposta;
 
