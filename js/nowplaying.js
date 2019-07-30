@@ -23,29 +23,29 @@ $(document).ready(function() {
    *  Variáveis Globais
    */
 
-  var sub = new NchanSubscriber(
+  const sub = new NchanSubscriber(
     'https://painel.radio-afonsosantos.tk/api/live/nowplaying/radioafonsosantos'
   );
-  var resposta;
+  const resposta;
 
   /*
    *  Elementos da DOM
    */
 
   // A Tocar
-  var artista = document.getElementById('artista');
-  var musica = document.getElementById('musica');
-  var imagem = document.getElementById('imagem');
-  var status = document.getElementById('status');
-  var dj = document.getElementById('dj');
-  var ouvintes = document.getElementById('ouvintes');
+  const artista = document.getElementById('artista');
+  const musica = document.getElementById('musica');
+  const imagem = document.getElementById('imagem');
+  const status = document.getElementById('status');
+  const dj = document.getElementById('dj');
+  const ouvintes = document.getElementById('ouvintes');
 
   // Vai Tocar
-  var vai_tocar_1 = document.getElementById('vai-tocar-1');
-  var vai_tocar_2 = document.getElementById('vai-tocar-2');
-  var imagem_seguinte = document.getElementById('imagem-seguinte');
-  var musica_seguinte = document.getElementById('musica-seguinte');
-  var artista_seguinte = document.getElementById('artista-seguinte');
+  const vai_tocar_1 = document.getElementById('vai-tocar-1');
+  const vai_tocar_2 = document.getElementById('vai-tocar-2');
+  const imagem_seguinte = document.getElementById('imagem-seguinte');
+  const musica_seguinte = document.getElementById('musica-seguinte');
+  const artista_seguinte = document.getElementById('artista-seguinte');
 
   // Obtém os dados apartir da Websocket
   sub.on('message', function(message) {
@@ -78,6 +78,10 @@ $(document).ready(function() {
     } else if (resposta.listeners.unique == 0) {
       $(ouvintes).text('Nenhum Ouvinte');
     }
+
+    // Adiciona a classe 'active' ao horário respetivo
+    // de acordo com a playlist que está a tocar
+    
 
     // Atualiza sempre estes dados abaixo
 

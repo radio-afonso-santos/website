@@ -24,10 +24,10 @@ $(document).ready(function() {
     'https://painel.radio-afonsosantos.tk/radio/8000/radio.mp3?1562112982';
 
   // Objetos da DOM
-  var reprodutor = document.getElementById('reprodutor');
-  var reproduzir = document.getElementById('reproduzir');
-  var parar = document.getElementById('parar');
-  var volume = document.getElementById('volume');
+  const reprodutor = document.getElementById('reprodutor');
+  const reproduzir = document.getElementById('reproduzir');
+  const parar = document.getElementById('parar');
+  const volume = document.getElementById('volume');
 
   /*
    * Tarefas inciais
