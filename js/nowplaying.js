@@ -1,6 +1,6 @@
 /*
  * Script para obtenção de dados
- * apartir da API da Rádio Afonso Santos
+ * a partir da API da Rádio Afonso Santos
  *
  * Website para a Rádio Afonso Santos
  * https://github.com/radio-afonso-santos/website

@@ -1,6 +1,6 @@
 /*
- * Script para manipulação do reprodutor da stream
- * da Rádio Afonso Santos
+ * Script para manipulação do reprodutor
+ * da transmissão da Rádio Afonso Santos
  *
  * Website para a Rádio Afonso Santos
  * https://github.com/radio-afonso-santos/website
