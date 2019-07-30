@@ -19,11 +19,17 @@
  */
 
 $(document).ready(function() {
-  // Variáveis globais
-  var url =
+  /*
+   *  Variáveis Globais
+   */
+
+  const url =
     'https://painel.radio-afonsosantos.tk/radio/8000/radio.mp3?1562112982';
 
-  // Objetos da DOM
+  /*
+   *  Elementos da DOM
+   */
+
   const reprodutor = document.getElementById('reprodutor');
   const reproduzir = document.getElementById('reproduzir');
   const parar = document.getElementById('parar');
