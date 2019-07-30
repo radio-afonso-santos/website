@@ -26,7 +26,7 @@ $(document).ready(function() {
   const sub = new NchanSubscriber(
     'https://painel.radio-afonsosantos.tk/api/live/nowplaying/radioafonsosantos'
   );
-  const resposta;
+  var resposta;
 
   /*
    *  Elementos da DOM
@@ -81,7 +81,6 @@ $(document).ready(function() {
 
     // Adiciona a classe 'active' ao horário respetivo
     // de acordo com a playlist que está a tocar
-    
 
     // Atualiza sempre estes dados abaixo
 
