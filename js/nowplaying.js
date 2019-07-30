@@ -79,7 +79,28 @@ $(document).ready(function() {
       $(ouvintes).text('Nenhum Ouvinte');
     }
 
-    // Atualiza sempre estes dados abaixo
+    /*
+     *  Adiciona a classe 'active' ao horário respetivo
+     *  de acordo com o nome da a sua playlist
+     */
+
+    // Playlists
+    const playlist_variada = document.getElementById('playlist-variada');
+    const playlist_synthwave = document.getElementById('playlist-synthwave');
+    var playlist_atual = resposta.now_playing.playlist;
+
+    // Verifica a o nome da playlist e seleciona o elemento correto
+    if (playlist_atual == 'Músicas - Variadas') {
+      $(playlist_synthwave).removeClass('active');
+      $(playlist_variada).addClass('active');
+    } else if (playlist_atual == 'Músicas - Synthwave') {
+      $(playlist_variada).removeClass('active');
+      $(playlist_synthwave).addClass('active');
+    }
+
+    /*
+     *  Atualiza sempre estes dados abaixo
+     */
 
     // A Tocar
     $(imagem).attr('src', resposta.now_playing.song.art);
@@ -94,30 +115,4 @@ $(document).ready(function() {
 
   // Inicia o nchan
   sub.start();
-
-  // Adiciona a classe 'active' ao horário respetivo
-  // de acordo com a playlist que está a tocar
-
-  /*
-   *  Playlists
-   */
-  const playlist_variada = document.getElementById('playlist-variada');
-  const playlist_synthwave = document.getElementById('playlist-synthwave');
-
-  /*
-   *  Hora
-   */
-  var now = new Date(Date.now());
-  var hora = now.getHours() + ':' + now.getMinutes();
-  console.log(hora);
-
-  // Verifica a hora atual e adiciona a classe 'active'
-  // à playlist correta
-  if (hora >= '23:00' && hora <= '4:00') {
-    $(playlist_variada).removeClass('active');
-    $(playlist_synthwave).addClass('active');
-  } else if (hora >= '4:00' && hora < '23:00') {
-    $(playlist_synthwave).removeClass('active');
-    $(playlist_variada).addClass('active');
-  }
 });
