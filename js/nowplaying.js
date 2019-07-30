@@ -79,9 +79,6 @@ $(document).ready(function() {
       $(ouvintes).text('Nenhum Ouvinte');
     }
 
-    // Adiciona a classe 'active' ao horário respetivo
-    // de acordo com a playlist que está a tocar
-
     // Atualiza sempre estes dados abaixo
 
     // A Tocar
@@ -97,4 +94,30 @@ $(document).ready(function() {
 
   // Inicia o nchan
   sub.start();
+
+  // Adiciona a classe 'active' ao horário respetivo
+  // de acordo com a playlist que está a tocar
+
+  /*
+   *  Playlists
+   */
+  const playlist_variada = document.getElementById('playlist-variada');
+  const playlist_synthwave = document.getElementById('playlist-synthwave');
+
+  /*
+   *  Hora
+   */
+  var now = new Date(Date.now());
+  var hora = now.getHours() + ':' + now.getMinutes();
+  console.log(hora);
+
+  // Verifica a hora atual e adiciona a classe 'active'
+  // à playlist correta
+  if (hora >= '23:00' && hora <= '4:00') {
+    $(playlist_variada).removeClass('active');
+    $(playlist_synthwave).addClass('active');
+  } else if (hora >= '4:00' && hora < '23:00') {
+    $(playlist_synthwave).removeClass('active');
+    $(playlist_variada).addClass('active');
+  }
 });
