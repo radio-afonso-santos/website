@@ -136,14 +136,18 @@
           </ul>
           <div class="mb-2"></div>
         </div>
-        <!-- FICHEIROS E PEDIDO DE MUSICAS -->
+        <!-- FICHEIROS E PEDIDO DE NOVA MÚSICA -->
         <div class="col-md">
           <!-- FICHEIROS -->
           <h3>Ficheiros Playlist</h3>
-          <div class="my-4"></div>
-          <h4>Ficheiro <span class="badge badge-dark">M3U</span> & <span class="badge badge-dark">PLS</span></h4>
+          <div class="my-2"></div>
+          <h4>
+            Ficheiro <span class="badge badge-dark">M3U</span> &
+            <span class="badge badge-dark">PLS</span>
+          </h4>
           <p>
-            Utilize este ficheiros para ouvir a Rádio Afonso Santos num reprodutor multimédia como o VLC, uma app móvel, etc.
+            Utilize este ficheiros para ouvir a Rádio Afonso Santos num
+            reprodutor multimédia como o VLC, uma app móvel, etc.
           </p>
           <a href="https://painel.radio-afonsosantos.tk/public/1/playlist/m3u">
             <button type="button" class="btn btn-primary">
@@ -155,6 +159,21 @@
               <i class="fas fa-download mr-1"></i> PLS
             </button>
           </a>
+          <!-- PEDIDO DE NOVA MÚSICA -->
+          <div class="my-4"></div>
+          <h3>Pedido de Nova Música</h3>
+          <p>
+            Clica no botão abaixo para pedir uma música a ser adicionada à Rádio
+            Afonso Santos
+          </p>
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#pedidos"
+          >
+          <i class="fas fa-external-link-square-alt"></i> Abrir Formulário
+          </button>
         </div>
       </div>
     </div>
@@ -269,6 +288,34 @@
       </div>
     </div>
 
+    <!-- MODAL DO PEDIDO DE NOVA MÚSICA -->
+    <div class="modal fade" id="pedidos">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- CABEÇALHO -->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <!-- CORPO -->
+          <div class="modal-body">
+            <iframe
+              src="http://radio-pedidos.afonsosantos.x10.mx/modal"
+              frameborder="0"
+              style="min-height: 450px; width: 100%;"
+            ></iframe>
+          </div>
+          <!-- RODAPÉ -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">
+              Fechar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- FOOTER -->
     <footer class="footer mb-4">
       <div class="container">
@@ -283,5 +330,6 @@
     <script src="js/NchanSubscriber.js"></script>
     <script src="js/nowplaying.js"></script>
     <script src="js/player.js"></script>
+    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
