@@ -136,7 +136,7 @@
           </ul>
           <div class="mb-2"></div>
         </div>
-        <!-- FICHEIROS E PEDIDO DE NOVA MÚSICA -->
+        <!-- FICHEIROS E PEDIDO DE MÚSICA -->
         <div class="col-md">
           <!-- FICHEIROS -->
           <h3>Ficheiros Playlist</h3>
@@ -145,7 +145,7 @@
             Ficheiro <span class="badge badge-dark">M3U</span> &
             <span class="badge badge-dark">PLS</span>
           </h4>
-          <p>
+          <p class="text-justify">
             Utilize este ficheiros para ouvir a Rádio Afonso Santos num
             reprodutor multimédia como o VLC, uma app móvel, etc.
           </p>
@@ -159,12 +159,12 @@
               <i class="fas fa-download mr-1"></i> PLS
             </button>
           </a>
-          <!-- PEDIDO DE NOVA MÚSICA -->
+          <!-- PEDIDO DE MÚSICA -->
           <div class="my-4"></div>
-          <h3>Pedido de Nova Música</h3>
-          <p>
-            Clica no botão abaixo para pedir uma música a ser adicionada à Rádio
-            Afonso Santos
+          <h3>Pedido de Música</h3>
+          <p class="text-justify">
+            Clica no botão abaixo para pedir que uma música da nossa biblioteca
+            seja reproduzida na Rádio Afonso Santos.
           </p>
           <button
             type="button"
@@ -172,7 +172,7 @@
             data-toggle="modal"
             data-target="#pedidos"
           >
-          <i class="fas fa-external-link-square-alt"></i> Abrir Formulário
+            <i class="fas fa-external-link-square-alt"></i> Abrir Formulário
           </button>
         </div>
       </div>
@@ -288,12 +288,13 @@
       </div>
     </div>
 
-    <!-- MODAL DO PEDIDO DE NOVA MÚSICA -->
+    <!-- POPUP DO PEDIDOS DE MÚSICAS -->
     <div class="modal fade" id="pedidos">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <!-- CABEÇALHO -->
           <div class="modal-header">
+            <h4 class="modal-title">Pedido de Música</h4>
             <button type="button" class="close" data-dismiss="modal">
               &times;
             </button>
@@ -301,16 +302,12 @@
           <!-- CORPO -->
           <div class="modal-body">
             <iframe
-              src="https://radio-pedidos.afonsosantos.x10.mx/modal"
+              src="https://painel.radio-afonsosantos.tk/public/radioafonsosantos/embed-requests"
               frameborder="0"
-              style="min-height: 450px; width: 100%;"
-            ></iframe>
-          </div>
-          <!-- RODAPÉ -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">
-              Fechar
-            </button>
+              allowtransparency="true"
+              style="width: 100%; min-height: 906px; border: 0;"
+            >
+            </iframe>
           </div>
         </div>
       </div>
