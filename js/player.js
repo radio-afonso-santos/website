@@ -15,7 +15,7 @@
  *
  * Criado em 07/2019
  *
- * Licença: Licença: Apache-2.0
+ * Licença: Apache-2.0
  */
 
 $(document).ready(function() {
