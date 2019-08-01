@@ -15,7 +15,7 @@
  *
  * Criado em 07/2019
  *
- * Licença: MIT
+ * Licença: Licença: Apache-2.0
  */
 
 $(document).ready(function() {

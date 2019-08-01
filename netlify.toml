@@ -1,3 +1,6 @@
+# Website da Rádio Afonso Santos
+# Powered by Netlify
+
 [[headers]]
   for = "/img/*"
   [headers.values]
