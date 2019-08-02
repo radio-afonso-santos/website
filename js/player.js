@@ -18,7 +18,7 @@
  * Licença: Apache-2.0
  */
 
-$(document).ready(function() {
+$(document).ready(function () {
   /*
    *  Variáveis Globais
    */
@@ -56,14 +56,14 @@ $(document).ready(function() {
    */
 
   // Reproduzir
-  reproduzir.addEventListener('click', function() {
+  reproduzir.addEventListener('click', function () {
     reprodutor.play();
     reproduzir.disabled = true;
     parar.disabled = false;
   });
 
   // Parar
-  parar.addEventListener('click', function() {
+  parar.addEventListener('click', function () {
     reprodutor.pause();
     reprodutor.src = reprodutor.src;
     reproduzir.disabled = false;
@@ -71,7 +71,7 @@ $(document).ready(function() {
   });
 
   // Controla o volume do reprodutor
-  volume.addEventListener('change', function() {
+  volume.addEventListener('change', function () {
     reprodutor.volume = this.value;
   });
 });

@@ -18,7 +18,7 @@
  * Licença: Apache-2.0
  */
 
-$(document).ready(function() {
+$(document).ready(function () {
   /*
    *  Variáveis Globais
    */
@@ -46,7 +46,7 @@ $(document).ready(function() {
   const artista_seguinte = document.getElementById("artista-seguinte");
 
   // Obtém os dados apartir da Websocket
-  sub.on("message", function(message) {
+  sub.on("message", function (message) {
     // Resposta da API
     resposta = JSON.parse(message);
 
