@@ -44,7 +44,7 @@ $(document).ready(function () {
   reprodutor.src = url;
 
   // Volume inicial
-  reprodutor.volume = 0.2;
+  reprodutor.volume = 0.3;
 
   // Botão parar desativado
   parar.disabled = true;
