@@ -45,7 +45,7 @@ $(document).ready(function() {
   // Volume do reprodutor
   // (este será o valor padrão enquanto não for implementada
   // uma maneira de definir o volume manualmente)
-  reprodutor.volume = 0.5;
+  reprodutor.volume = 1;
 
   // Ícone padrão
   $(icone).addClass('fa-play');
