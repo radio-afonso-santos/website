@@ -74,11 +74,4 @@ $(document).ready(function() {
       // console.log('Pause');
     }
   });
-
-  $(document).keydown(function(e) {
-    if (e === 13) {
-      console.log('enter');
-    } else {
-    }
-  });
 });
