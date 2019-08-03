@@ -19,7 +19,6 @@
 -->
 <!DOCTYPE html>
 <html lang="pt">
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,12 +27,16 @@
 
     <!-- ESTILOS E FONTE AWESOME -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="vendor/font-awesome/css/all.css" />
 
     <title>Rádio Afonso Santos</title>
   </head>
 
   <body>
+    <!-- REPRODUTOR -->
+    <audio id="reprodutor" preload="none"></audio>
+
     <!-- NAVBAR -->
     <nav class="navbar navbar-dark bg-primary">
       <a class="navbar-brand" href="/">
@@ -56,7 +59,15 @@
           <!-- CAPA -->
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-3">
             <div class="media">
-              <img src="" width="110px" id="imagem" class="mr-3 rounded align-self-start img-fluid" />
+              <div class="overlay">
+                <img
+                  src=""
+                  width="110px"
+                  id="imagem"
+                  class="mr-3 rounded align-self-start img-fluid"
+                />
+                <i id="icone" style="cursor: pointer; " class="fas fa-3x"></i>
+              </div>
               <!-- METADADOS-->
               <div class="media-body">
                 <h4>
@@ -64,209 +75,263 @@
                   <span id="status" class="status badge"></span>
                 </h4>
                 <h4 id="musica" class="font-weight-bold"></h4>
-                <h5 id="artista""></h5>
+                <h5 id="artista"></h5>
               </div>
             </div>
           </div>
           <!-- VAI TOCAR -->
           <!-- CAPA -->
-          <div class=" col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                  <div class="media">
-                    <img src="" width="110px" id="imagem-seguinte" class="mr-3 rounded align-self-start img-fluid" />
-                    <!-- METADADOS -->
-                    <div class="media-body">
-                      <h4>
-                        <span class="badge badge-warning">Vai Tocar</span>
-                      </h4>
-                      <h4 id="musica-seguinte" class="font-weight-bold"></h4>
-                      <h5 id="artista-seguinte"></h5>
-                    </div>
-                  </div>
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-3">
+            <div class="media">
+              <img
+                src=""
+                width="110px"
+                id="imagem-seguinte"
+                class="mr-3 rounded align-self-start img-fluid"
+              />
+              <!-- METADADOS -->
+              <div class="media-body">
+                <h4>
+                  <span class="badge badge-danger">Vai Tocar</span>
+                </h4>
+                <h4 id="musica-seguinte" class="font-weight-bold"></h4>
+                <h5 id="artista-seguinte"></h5>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- SOBRE, FICHEIROS PLAYLIST E PEDIDO DE MUSICAS -->
-      <div class="container">
-        <div class="row">
-          <!-- SOBRE -->
-          <div class="col-md">
-            <h3>Sobre</h3>
-            <div class="my-2"></div>
-            <p class="text-justify">
-              A Rádio Afonso Santos surgiu em 2018, e começou com um hobby de um
-              jovem com gosto pela rádio e as tecnologias que fazem a rádio
-              funcionar. Hoje em dia, apesar de continuar a ser um hobby, a Rádio
-              Afonso Santos já está online 24/7 com uma transmissão contínua da
-              melhor música. Ocasionalmente, eventos ao vivo podem acontecer, por
-              isso fique atento ao servidor Discord, no fundo da página.
-            </p>
-            <h3>Horário</h3>
-            <div class="my-2"></div>
-            <p class="text-justify">
-              <span class="badge badge-danger">Novo</span>
-              A playlist que está ao vivo na rádio irá ficar selecionada, desde a
-              sua hora de início até ao final da programação (não funciona quando um DJ está ao vivo).
-            </p>
-            <ul class="list-group mt-3 mb-3">
-              <li class="list-group-item d-flex justify-content-between align-items-center" id="playlist-variada">
-                Música Variada
-                <span class="badge badge-primary badge-pill">4h às 23h</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center" id="playlist-synthwave">
-                Synthwave
-                <span class="badge badge-primary badge-pill">23h às 4h</span>
-              </li>
-            </ul>
-          </div>
-          <!-- FICHEIROS E PEDIDO DE MÚSICA -->
-          <div class="col-md">
-            <!-- FICHEIROS -->
-            <h3>Ficheiros Playlist</h3>
-            <div class="my-2"></div>
-            <h4>
-              Ficheiro <span class="badge badge-dark">M3U</span> &
-              <span class="badge badge-dark">PLS</span>
-            </h4>
-            <p class="text-justify">
-              Utilize este ficheiros para ouvir a Rádio Afonso Santos num
-              reprodutor multimédia como o VLC, uma app móvel, etc.
-            </p>
-            <a class="btn btn-primary" href="https://painel.radio-afonsosantos.tk/public/1/playlist/m3u" role="button">
-              <i class="fas fa-download mr-1"></i> M3U
-            </a>
-            <a class="btn btn-primary" href="https://painel.radio-afonsosantos.tk/public/1/playlist/pls" role="button">
-              <i class="fas fa-download mr-1"></i> PLS
-            </a>
-            <!-- PEDIDO DE MÚSICA -->
-            <div class="my-4"></div>
-            <h3>Pedido de Música</h3>
-            <p class="text-justify">
-              <span class="badge badge-danger">Novo</span>
-              Clica no botão abaixo para pedir que uma música da nossa biblioteca
-              seja reproduzida na Rádio Afonso Santos.
-            </p>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pedidos">
-              <i class="fas fa-external-link-square-alt"></i> Abrir Formulário
-            </button>
-          </div>
+    </div>
+    <!-- HORÁRIO E PEDIDO DE MÚSICAS -->
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+          <h3>Horário</h3>
+          <p class="text-justify">
+            <span class="badge badge-danger mr-1">Novo</span>
+            A playlist que está ao vivo na rádio irá ficar selecionada, desde a
+            sua hora de início até ao final da programação (não funciona quando
+            um DJ está ao vivo).
+          </p>
+          <ul class="list-group mt-3 mb-3">
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center py-1"
+              id="playlist-variada"
+            >
+              Música Variada
+              <span class="badge badge-primary badge-pill">4h às 23h</span>
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center py-1"
+              id="playlist-synthwave"
+            >
+              Synthwave
+              <span class="badge badge-primary badge-pill">23h às 4h</span>
+            </li>
+          </ul>
+        </div>
+        <!-- PEDIDO DE MÚSICA -->
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+          <h3>Pedido de Música</h3>
+          <p class="text-justify">
+            <span class="badge badge-danger mr-1">Novo</span>
+            Clica no botão abaixo para pedir que uma música da nossa biblioteca
+            seja reproduzida (estes pedidos demoram até 5 minutos a serem
+            reproduzidos).
+          </p>
+          <button
+            type="button"
+            class="btn btn-primary btn-sm btn-block"
+            data-toggle="modal"
+            data-target="#pedidos"
+          >
+            <i class="fas fa-external-link-square-alt"></i> Abrir Formulário
+          </button>
         </div>
       </div>
-      <!-- CONTATOS -->
-      <div class="my-4"></div>
-      <div class="jumbotron">
-        <div class="container">
-          <h3>Contatos</h3>
-          <p>
-            Utilize o formulário ou as redes sociais abaixo para contactar a Rádio
-            Afonso Santos, independentemente do assunto
-          </p>
-          <div class="row">
-            <!-- FORMULÁRIO CONTATO-->
-            <div class="p-4 col-md">
-              <form name="contatos" method="POST" data-netlify="true">
-                <div class="form-group">
-                  <label>Nome</label>
-                  <input type="text" class="form-control" name="nome" placeholder="O seu nome" required />
-                </div>
-                <div class="form-group">
-                  <label>Email</label>
-                  <input type="email" class="form-control" name="email" placeholder="O seu email" required />
-                </div>
-                <div class="form-group">
-                  <label>Assunto</label>
-                  <input type="text" class="form-control" name="assunto" placeholder="Sugestão, erro no website, ..." />
-                </div>
-                <div class="form-group">
-                  <label>Mensagem</label>
-                  <textarea class="form-control" name="mensagem" cols="30" rows="5" placeholder="A sua mensagem" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">
-                  <i class="fas fa-paper-plane"></i> Enviar
-                </button>
-              </form>
-            </div>
-            <!-- REDES SOCIAIS-->
-            <div class="p-4 col-md">
-              <div class="mt-4"></div>
-              <!-- DISCORD -->
+    </div>
+    <!-- CONTATOS -->
+    <div class="jumbotron">
+      <div class="container">
+        <h3>Contatos</h3>
+        <p class="text-justify">
+          Utilize o formulário ou as redes sociais abaixo para contactar a Rádio
+          Afonso Santos, independentemente do assunto
+        </p>
+        <div class="row">
+          <!-- FORMULÁRIO CONTATO-->
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-4">
+            <form name="contatos" method="POST" data-netlify="true">
+              <div class="form-group">
+                <label>Nome</label>
+                <input
+                  type="text"
+                  class="form-control form-control-sm"
+                  name="nome"
+                  placeholder="O seu nome"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input
+                  type="email"
+                  class="form-control form-control-sm"
+                  name="email"
+                  placeholder="O seu email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Assunto</label>
+                <input
+                  type="text"
+                  class="form-control form-control-sm"
+                  name="assunto"
+                  placeholder="Sugestão, erro no website, ..."
+                />
+              </div>
+              <div class="form-group">
+                <label>Mensagem</label>
+                <textarea
+                  class="form-control"
+                  name="mensagem"
+                  cols="30"
+                  rows="3"
+                  placeholder="A sua mensagem"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-sm btn-block">
+                <i class="fas fa-paper-plane"></i> Enviar
+              </button>
+            </form>
+          </div>
+          <!-- TODO -->
+          <!-- REDES SOCIAIS-->
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <div class="card-group mt-4">
               <div class="row">
-                <div class="col-auto">
+                <!-- DISCORD -->
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
                   <div class="text-center d-flex justify-content-center">
                     <div class="card border-primary mb-3">
                       <div class="card-header">
                         <a href="https://discord.gg/dm8Ze7z" target="_blank">
-                          <i style="color: #ffffff;" class="fab fa-discord fa-4x"></i>
+                          <i
+                            style="color: #ffffff;"
+                            class="fab fa-discord fa-3x"
+                          ></i>
                         </a>
                       </div>
+                      <!-- discord / col / text-center / card / card-header -->
                       <div class="card-body">
                         <p class="card-text">
                           O nosso servidor Discord, onde poderá ouvir a nossa
-                          rádio e estar dentro de todas as notícias.
+                          rádio e estar dentro de todas as notícias. <br />
+                          <span class="font-weight-bold"
+                            >https://discord.gg/dm8Ze7z</span
+                          >
                         </p>
                       </div>
+                      <!-- redes sociais / discord / card / body -->
                     </div>
+                    <!-- redes sociais / discord / card -->
                   </div>
+                  <!-- redes socias / discord / text-center -->
                 </div>
-                <div class="mx-3"></div>
+                <!-- redes sociais / discord / col -->
+
                 <!-- FACEBOOK -->
-                <div class="col-auto">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
                   <div class="text-center d-flex justify-content-center">
                     <div class="card border-primary mb-3">
                       <div class="card-header">
                         <a href="mailto:afonso@radio-afonsosantos.tk">
-                          <i style="color: #ffffff;" class="fas fa-envelope fa-4x"></i>
+                          <i
+                            style="color: #ffffff;"
+                            class="fas fa-envelope fa-3x"
+                          ></i>
                         </a>
                       </div>
+                      <!-- facebook / col / text-center / card / card-header -->
                       <div class="card-body">
                         <p class="card-text">
-                          O email alternativo ao formulário ao lado, caso prefira
-                          escrever um email.<br /><strong>afonso@radio-afonsosantos.tk</strong>
+                          O email alternativo ao formulário ao lado, caso
+                          prefira escrever um email.<br />
+                          <span class="font-weight-bold"
+                            >afonso@radio-afonsosantos.tk</span
+                          >
                         </p>
                       </div>
+                      <!-- redes socias / facebook / card / card-body -->
                     </div>
+                    <!-- redes socias / facebook / card -->
                   </div>
+                  <!-- redes socias / facebook / text-center -->
                 </div>
+                <!-- redes socias / facebook / col-->
               </div>
+              <!-- redes sociais / row -->
             </div>
+            <!-- redes socias / card-group -->
           </div>
+          <!-- redes sociais / col -->
         </div>
+        <!-- redes socias / row -->
       </div>
+      <!-- contatos / container -->
+    </div>
+    <!-- contatos / jumbotron -->
 
-      <!-- FOOTER -->
-      <footer class="footer mb-4">
-        <div class="container">
-          <span class="text-muted"><small>&copy; 2019 - RÁDIO AFONSO SANTOS</small></span>
-        </div>
-      </footer>
+    <!-- FOOTER -->
+    <footer class="footer mb-4">
+      <div class="container">
+        <span class="text-muted"
+          ><small>&copy; 2019 - RÁDIO AFONSO SANTOS</small></span
+        >
+      </div>
+      <!-- footer / container -->
+    </footer>
+    <!-- footer -->
 
-      <!-- SCRIPTS -->
-      <script src="js/jquery.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-      <script src="js/NchanSubscriber.js"></script>
-      <script src="js/nowplaying.js"></script>
-      <script src="js/player.js"></script>
+    <!-- SCRIPTS -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/NchanSubscriber.js"></script>
+    <script src="js/nowplaying.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/keyboardShortcut.js"></script>
 
-      <!-- POPUP DO PEDIDOS DE MÚSICAS -->
-      <div class="modal fade" id="pedidos">
-        <div class="modal-dialog modal-xl">
-          <div class="modal-content">
-            <!-- CABEÇALHO -->
-            <div class="modal-header">
-              <h4 class="modal-title">Pedido de Música</h4>
-              <button type="button" class="close" data-dismiss="modal">
-                &times;
-              </button>
-            </div>
-            <!-- CORPO -->
-            <div class="modal-body">
-              <iframe src="https://painel.radio-afonsosantos.tk/public/radioafonsosantos/embed-requests" frameborder="0" allowtransparency="true" style="width: 100%; min-height: 906px; border: 0;">
-              </iframe>
-            </div>
+    <!-- POPUP DO PEDIDOS DE MÚSICAS -->
+    <div class="modal fade" id="pedidos">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <!-- CABEÇALHO -->
+          <div class="modal-header">
+            <h4 class="modal-title">Pedido de Música</h4>
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
           </div>
+          <!-- popup / modal / modal-dialog / modal-content / modal-header -->
+
+          <!-- CORPO -->
+          <div class="modal-body">
+            <iframe
+              src="https://painel.radio-afonsosantos.tk/public/radioafonsosantos/embed-requests"
+              frameborder="0"
+              allowtransparency="true"
+              style="width: 100%; min-height: 906px; border: 0;"
+            >
+            </iframe>
+          </div>
+          <!-- popup /  modal-dialog / modal-content / modal-body -->
         </div>
+        <!-- popup /  modal-dialog / modal-content -->
       </div>
+      <!-- popup /  modal-dialog -->
+    </div>
+    <!-- popup / modal -->
   </body>
-
 </html>

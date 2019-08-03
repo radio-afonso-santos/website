@@ -1,0 +1,20 @@
+.overlay {
+  position: relative;
+}
+
+.overlay i {
+  position: absolute;
+  top: 47%;
+  left: 44%;
+  transform: translate(-45%, -45%);
+  display: none;
+}
+
+.overlay:hover img {
+  opacity: 0.5;
+}
+
+.overlay:hover i {
+  display: block;
+  z-index: 500;
+}

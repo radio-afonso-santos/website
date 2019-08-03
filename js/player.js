@@ -18,7 +18,7 @@
  * Licença: Apache-2.0
  */
 
-$(document).ready(function () {
+$(document).ready(function() {
   /*
    *  Variáveis Globais
    */
@@ -31,47 +31,54 @@ $(document).ready(function () {
    */
 
   const reprodutor = document.getElementById('reprodutor');
-  const reproduzir = document.getElementById('reproduzir');
-  const parar = document.getElementById('parar');
-  const volume = document.getElementById('volume');
+  const icone = document.getElementById('icone');
+  var status = 'off';
 
   /*
    * Tarefas inciais
-   * Origem do áudio, volume inicial e botão parar desativado
+   * Origem do áudio, volume e ícone padrão
    */
 
   // Define a origem do áudio
   reprodutor.src = url;
 
-  // Volume inicial
-  reprodutor.volume = 0.3;
+  // Volume do reprodutor
+  // (este será o valor padrão enquanto não for implementada
+  // uma maneira de definir o volume manualmente)
+  reprodutor.volume = 0.5;
 
-  // Botão parar desativado
-  parar.disabled = true;
-  reproduzir.disabled = false;
+  // Ícone padrão
+  $(icone).addClass('fa-play');
 
   /*
-   * Funções para manipulação da stream
-   * reproduzir, parar e controlo do volume
+   * Funções para manipulação da reprodução
+   * reproduzir e parar
    */
 
-  // Reproduzir
-  reproduzir.addEventListener('click', function () {
-    reprodutor.play();
-    reproduzir.disabled = true;
-    parar.disabled = false;
+  // Reproduzir e Parar
+  $(icone).click(function play_pause() {
+    if (status === 'off') {
+      // Reproduzir
+      $(icone).removeClass('fa-play');
+      reprodutor.play();
+      status = 'on';
+      $(icone).addClass('fa-pause');
+      // console.log('Play');
+    } else if (status === 'on') {
+      // Parar
+      $(icone).removeClass('fa-pause');
+      reprodutor.pause();
+      reprodutor.src = reprodutor.src;
+      status = 'off';
+      $(icone).addClass('fa-play');
+      // console.log('Pause');
+    }
   });
 
-  // Parar
-  parar.addEventListener('click', function () {
-    reprodutor.pause();
-    reprodutor.src = reprodutor.src;
-    reproduzir.disabled = false;
-    parar.disabled = true;
-  });
-
-  // Controla o volume do reprodutor
-  volume.addEventListener('change', function () {
-    reprodutor.volume = this.value;
+  $(document).keydown(function(e) {
+    if (e === 13) {
+      console.log('enter');
+    } else {
+    }
   });
 });
