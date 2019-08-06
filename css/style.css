@@ -1,3 +1,10 @@
+/* FONTES */
+@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 .overlay {
   position: relative;
 }
@@ -17,4 +24,37 @@
 .overlay:hover i {
   display: block;
   z-index: 500;
+}
+
+.fonte-personalizada {
+  font-family: 'Bangers', cursive;
+}
+
+.logotipo {
+  width: 350px;
+}
+
+.cor-1 {
+  background: #303030;
+}
+
+a {
+  color: #375a7f;
+}
+
+a:hover {
+  color: #375a7f;
+}
+
+i#footer {
+  color: #ff0000;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+.texto-brand {
+  font-size: 1.5rem !important;
+  font-family: 'Bangers';
 }

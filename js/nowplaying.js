@@ -35,12 +35,18 @@ $(document).ready(function() {
   const musica = document.getElementById('musica');
   const imagem = document.getElementById('imagem');
   const status = document.getElementById('status');
+  const nome_dj = document.getElementById('nome-dj');
   const ouvintes = document.getElementById('ouvintes');
 
   // Vai Tocar
+  const coluna_seguinte = document.getElementById('coluna-seguinte');
   const imagem_seguinte = document.getElementById('imagem-seguinte');
   const musica_seguinte = document.getElementById('musica-seguinte');
   const artista_seguinte = document.getElementById('artista-seguinte');
+
+  // Outros
+  const lista_playlists = document.getElementById('lista-playlists');
+  const mensagem_dj = document.getElementById('mensagem-dj');
 
   // Obtém os dados apartir da Websocket
   sub.on('message', function(message) {
@@ -53,11 +59,13 @@ $(document).ready(function() {
 
     // A Tocar
     $(imagem).attr('src', resposta.now_playing.song.art);
+    $(imagem_link).attr('href', resposta.now_playing.song.art);
     $(artista).text(resposta.now_playing.song.artist);
     $(musica).text(resposta.now_playing.song.title);
 
     // Vai Tocar
     $(imagem_seguinte).attr('src', resposta.playing_next.song.art);
+    $(imagem_seguinte_link).attr('href', resposta.playing_next.song.art);
     $(artista_seguinte).text(resposta.playing_next.song.artist);
     $(musica_seguinte).text(resposta.playing_next.song.title);
 
@@ -69,15 +77,25 @@ $(document).ready(function() {
     // Verifica se algum DJ está a transmitir
     if (resposta.live.is_live == true) {
       // DJ Online
+      // Esconde a coluna 'Vai Tocar'
       $(status).text('DJ ao Vivo');
-      // Mostra o nome do DJ
+      $(status).removeClass('badge-primary');
       $(status).addClass('badge-danger');
-      $(status).text(resposta.live.streamer_name);
+      $(nome_dj).show();
+      $(nome_dj).text(resposta.live.streamer_name);
+      $(coluna_seguinte).hide();
+      $(lista_playlists).hide();
+      $(mensagem_dj).show();
     } else {
       // Transmissão Normal
-      // Esconde o nome do DJ, depois de terminar a transmissão
+      // Mostra a coluna 'Vai Tocar' de novo
+      $(status).removeClass('badge-danger');
       $(status).addClass('badge-primary');
       $(status).text('A Tocar');
+      $(nome_dj).hide();
+      $(coluna_seguinte).show();
+      $(lista_playlists).show();
+      $(mensagem_dj).hide();
     }
 
     // Verifica se é 'ouvinte' ou 'ouvintes'

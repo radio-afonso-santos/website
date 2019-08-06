@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="vendor/font-awesome/css/all.css" />
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css" />
 
     <title>Rádio Afonso Santos</title>
   </head>
@@ -41,28 +42,30 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-dark bg-primary">
       <a class="navbar-brand" href="/">
-        <img src="img/logotipo.png" width="64px" alt="Rádio Afonso Santos" />
-        <span class="d-none d-sm-inline">Rádio Afonso Santos</span>
+        <img src="img/logotipo_branco.svg" class="d-none d-sm-block logotipo" />
+        <span class="texto-brand d-sm-none">Rádio Afonso Santos</span>
       </a>
       <ul class="navbar-nav navbar-right">
         <li class="nav-item">
           <h5>
-            <span id="ouvintes" class="badge badge-dark"></span>
+            <span id="ouvintes" class="d-none d-sm-block badge badge-dark"></span>
           </h5>
         </li>
       </ul>
     </nav>
     <!-- INFORMAÇÕES DA TRANSMISSÃO -->
-    <div class="jumbotron">
+    <div class="cor-1">
       <div class="container">
         <!-- LINHA -->
-        <div class="row">
+        <div class="row py-5">
           <!-- A TOCAR -->
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-3">
             <div class="media">
               <!-- CAPA -->
               <div class="overlay">
-                <img src="" width="110px" id="imagem" class="mr-3 rounded align-self-start img-fluid" />
+                <a href="" id="imagem_link" data-fancybox="imagem">
+                  <img src="" width="110px" id="imagem" class="imagem mr-3 rounded align-self-start img-fluid" />
+                </a>
                 <i id="icone" style="cursor: pointer; " class="fas fa-3x"></i>
               </div>
               <!-- METADADOS-->
@@ -73,14 +76,17 @@
                 </h4>
                 <h4 id="musica" class="font-weight-bold"></h4>
                 <h5 id="artista"></h5>
+                <span id="nome-dj" class="badge badge-primary"></span>
               </div>
             </div>
           </div>
           <!-- VAI TOCAR -->
           <!-- CAPA -->
-          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-3">
+          <div id="coluna-seguinte" class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-3">
             <div class="media">
-              <img src="" width="110px" id="imagem-seguinte" class="mr-3 rounded align-self-start img-fluid" />
+              <a href="" id="imagem_seguinte_link" data-fancybox="imagem_seguinte">
+                <img src="" width="110px" id="imagem-seguinte" class="imagem mr-3 rounded align-self-start img-fluid" />
+              </a>
               <!-- METADADOS -->
               <div class="media-body">
                 <h4>
@@ -96,15 +102,14 @@
     </div>
     <!-- HORÁRIO E PEDIDO DE MÚSICA -->
     <div class="container">
-      <div class="row mb-5">
+      <div class="row py-5">
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-          <h3>Horário</h3>
+          <h2 class="fonte-personalizada">Horário</h2>
           <p class="text-justify">
             <span class="badge badge-danger mr-1">Novo</span>
-            A playlist que está ao vivo na rádio irá ficar selecionada, desde a sua hora de início até ao final da programação (não funciona quando um DJ está
-            ao vivo).
+            A playlist que está ao vivo na rádio irá ficar selecionada, desde a sua hora de início até ao final da programação.
           </p>
-          <ul class="list-group mt-3 mb-3">
+          <ul id="lista-playlists" class="list-group mb-5">
             <li class="list-group-item d-flex justify-content-between align-items-center py-1" id="playlist-variada">
               Música Variada
               <span class="badge badge-primary badge-pill">7h às 23h</span>
@@ -114,14 +119,17 @@
               <span class="badge badge-primary badge-pill">23h às 7h</span>
             </li>
           </ul>
+          <p id="mensagem-dj" class="font-weight-bold text-justify">
+            <i class="fas fa-exclamation-circle"></i> Como um DJ está ao vivo, não é possível determinar a playlist atual.
+          </p>
         </div>
         <!-- PEDIDO DE MÚSICA -->
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-          <h3>Pedido de Música</h3>
+          <h2 class="fonte-personalizada">Pedido de Música</h2>
           <p class="text-justify">
             <span class="badge badge-danger mr-1">Novo</span>
-            Clica no botão abaixo para pedir que uma música da nossa biblioteca seja reproduzida (estes pedidos demoram até 5 minutos a serem reproduzidos, e
-            apenas as músicas da lista reprodução <span class="font-weight-bold">Variadas</span> estão disponíveis para pedir).
+            Clica no botão abaixo para pedir que uma música da nossa biblioteca seja reproduzida (apenas as músicas da lista reprodução
+            <span class="font-weight-bold">Música Variada</span> estão disponíveis para pedir).
           </p>
           <button type="button" class="btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#pedidos">
             <i class="fas fa-external-link-square-alt"></i> Abrir Formulário
@@ -130,9 +138,9 @@
       </div>
     </div>
     <!-- CONTATOS & REDES SOCIAIS -->
-    <div class="jumbotron">
+    <div class="cor-1 py-5">
       <div class="container">
-        <h3>Contatos</h3>
+        <h2 class="fonte-personalizada">Contatos</h2>
         <p class="text-justify">
           Utilize o formulário ou as redes sociais abaixo para contactar a Rádio Afonso Santos, independentemente do assunto
         </p>
@@ -160,8 +168,8 @@
             </form>
           </div>
           <!-- DISCORD E EMAIL-->
-          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-            <div class="card-group mt-4">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 align-self-center">
+            <div class="card-group">
               <div class="row">
                 <!-- DISCORD -->
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
@@ -233,11 +241,11 @@
     </div>
 
     <!-- FOOTER -->
-    <footer class="footer mb-4">
+    <footer class="footer py-4">
       <div class="container">
         <span class="small text-muted">
-          Made with <i class="fas fa-heart"></i> by
-          <a href="http://afonsosantos.x10.mx" target="_blank">Afonso Santos</a>
+          Made with <i id="footer" class="fas fa-heart"></i> by
+          <a href="https://afonsosantos-dev.tk" target="_blank">Afonso Santos</a>
         </span>
       </div>
     </footer>
@@ -248,5 +256,6 @@
     <script src="js/NchanSubscriber.js"></script>
     <script src="js/nowplaying.js"></script>
     <script src="js/player.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
   </body>
 </html>
