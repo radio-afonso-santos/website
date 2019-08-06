@@ -4,9 +4,6 @@
 
 ## Recursos Utilizados
 
-- Bootswatch [Darkly](https://bootswatch.com/darkly) (Tema Bootstrap)
-- API AzuraCast para os dados da transmissão ([AzuraCast](https://www.azuracast.com))
-
-## Licença
-
-**MIT**
+- Bootswatch para o tema do website [Darkly](https://bootswatch.com/darkly) (Tema Bootstrap)
+- AzuraCast para os dados da transmissão e API ([AzuraCast](https://www.azuracast.com))
+- FancyBox para uma lightbox das imagens das músicas ([Fancybox](https://www.fancyapps.com/fancybox/3/))
