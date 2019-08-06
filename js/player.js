@@ -10,7 +10,7 @@
  * https://github.com/AzuraCast/AzuraCast
  *
  * Afonso Santos
- * http://afonsosantos.x10.mx
+ * http://afonsosantos-dev.tk
  * https://github.com/afonsosantos
  *
  * Criado em 07/2019
@@ -23,8 +23,7 @@ $(document).ready(function() {
    *  Variáveis Globais
    */
 
-  const url =
-    'https://painel.radio-afonsosantos.tk/radio/8000/radio.mp3?1562112982';
+  const url = 'https://painel.radio-afonsosantos.tk/radio/8000/radio.mp3?1562112982';
 
   /*
    *  Elementos da DOM

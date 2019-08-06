@@ -10,7 +10,7 @@
  * https://github.com/AzuraCast/AzuraCast
  *
  * Afonso Santos
- * http://afonsosantos.x10.mx
+ * http://afonsosantos-dev.tk
  * https://github.com/afonsosantos
  *
  * Criado em 07/2019
@@ -18,14 +18,12 @@
  * Licença: Apache-2.0
  */
 
-$(document).ready(function () {
+$(document).ready(function() {
   /*
    *  Variáveis Globais
    */
 
-  const sub = new NchanSubscriber(
-    'https://painel.radio-afonsosantos.tk/api/live/nowplaying/radioafonsosantos'
-  );
+  const sub = new NchanSubscriber('https://painel.radio-afonsosantos.tk/api/live/nowplaying/radioafonsosantos');
   var resposta;
 
   /*
@@ -45,7 +43,7 @@ $(document).ready(function () {
   const artista_seguinte = document.getElementById('artista-seguinte');
 
   // Obtém os dados apartir da Websocket
-  sub.on('message', function (message) {
+  sub.on('message', function(message) {
     // Resposta da API
     resposta = JSON.parse(message);
 
