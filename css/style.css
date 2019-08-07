@@ -60,6 +60,10 @@ i#footer {
   z-index: 500;
 }
 
+.icon-reprodutor {
+  cursor: pointer;
+}
+
 /* NAVBAR */
 .logotipo {
   width: 350px;
