@@ -57,6 +57,7 @@
         </li>
       </ul>
     </nav>
+
     <!-- INFORMAÇÕES DA TRANSMISSÃO -->
     <div class="cor-1">
       <div class="container">
@@ -86,7 +87,7 @@
           </div>
           <!-- VAI TOCAR -->
           <!-- CAPA -->
-          <div id="coluna-seguinte" class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-3">
+          <div id="coluna-seguinte" id="coluna-normal" class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-3">
             <div class="media">
               <a href="" id="imagem_seguinte_link" data-fancybox="imagem_seguinte">
                 <img src="" width="110px" id="imagem-seguinte" class="imagem mr-3 rounded align-self-start img-fluid" />
@@ -141,16 +142,13 @@
         </div>
       </div>
     </div>
-    <!-- CONTATOS & REDES SOCIAIS -->
+    <!-- CONTATOS & DISCORD -->
     <div class="cor-1 py-5">
       <div class="container">
-        <h2 class="fonte-personalizada">Contatos</h2>
-        <p class="text-justify">
-          Utilize o formulário ou as redes sociais abaixo para contactar a Rádio Afonso Santos, independentemente do assunto
-        </p>
         <div class="row">
           <!-- FORMULÁRIO CONTATO-->
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-4">
+            <h2 class="fonte-personalizada mb-3">Contatos</h2>
             <form name="contatos" method="POST" data-netlify="true">
               <div class="form-group">
                 <label>Nome</label>
@@ -171,45 +169,21 @@
               <button type="submit" class="btn btn-primary btn-sm btn-block"><i class="fas fa-paper-plane"></i> Enviar</button>
             </form>
           </div>
-          <!-- DISCORD E EMAIL-->
-          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 align-self-center">
-            <div class="card-group">
-              <div class="row">
-                <!-- DISCORD -->
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
-                  <div class="text-center d-flex justify-content-center">
-                    <div class="card border-primary mb-3">
-                      <div class="card-header">
-                        <a href="https://discord.gg/dm8Ze7z" target="_blank">
-                          <i class="icone-social fab fa-discord fa-3x"></i>
-                        </a>
-                      </div>
-                      <div class="card-body">
-                        <p class="card-text">
-                          O nosso servidor Discord, onde poderá ouvir a nossa rádio e estar dentro de todas as notícias.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- EMAIL -->
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
-                  <div class="text-center d-flex justify-content-center">
-                    <div class="card border-primary mb-3">
-                      <div class="card-header">
-                        <a href="mailto:afonso@radio-afonsosantos.tk">
-                          <i class="icone-social fas fa-envelope fa-3x"></i>
-                        </a>
-                      </div>
-                      <div class="card-body">
-                        <p class="card-text">
-                          O email alternativo ao formulário ao lado, caso prefira escrever um email.<br />
-                          <span class="font-weight-bold">afonso@radio-afonsosantos.tk</span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+          <!-- DISCORD-->
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <h2 class="fonte-personalizada mb-3">Redes Sociais</h2>
+            <div class="row">
+              <div class="media p-3">
+                <i class="fab fa-discord fa-3x mr-3"></i>
+                <div class="media-body">
+                  <h4>
+                    <span class="badge badge-primary">
+                      <a id="discord" href="https://discord.gg/dm8Ze7z">Discord</a>
+                    </span>
+                  </h4>
+                  <p class="text-justify">
+                    Entra no nosso servidor para conheceres a nossa equipa, interagires com o nosso bot e seres informado de futuros eventos ao vivo.
+                  </p>
                 </div>
               </div>
             </div>
@@ -218,7 +192,7 @@
       </div>
     </div>
 
-    <!-- POPUP DO PEDIDOS DE MÚSICAS -->
+    <!-- POPUP DO PEDIDOS DE MÚSICA -->
     <div class="modal fade" id="pedidos">
       <div class="modal-dialog modal-xl">
         <div class="modal-content">

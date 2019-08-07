@@ -24,7 +24,7 @@ $(document).ready(function() {
    */
 
   const sub = new NchanSubscriber('https://painel.radio-afonsosantos.tk/api/live/nowplaying/radioafonsosantos');
-  var resposta;
+  let resposta;
 
   /*
    *  Elementos da DOM
@@ -44,13 +44,17 @@ $(document).ready(function() {
   const musica_seguinte = document.getElementById('musica-seguinte');
   const artista_seguinte = document.getElementById('artista-seguinte');
 
+  // Playlists
+  const playlist_variada = document.getElementById('playlist-variada');
+  const playlist_synthwave = document.getElementById('playlist-synthwave');
+
   // Outros
   const lista_playlists = document.getElementById('lista-playlists');
   const mensagem_dj = document.getElementById('mensagem-dj');
 
-  // Obtém os dados apartir da Websocket
+  // Obtém os dados a partir da API (através do nChan)
   sub.on('message', function(message) {
-    // Resposta da API
+    // Transforma a resposta da API num formato JSON padrão
     resposta = JSON.parse(message);
 
     /*
@@ -76,34 +80,62 @@ $(document).ready(function() {
 
     // Verifica se algum DJ está a transmitir
     if (resposta.live.is_live == true) {
-      // DJ Online
-      // Esconde a coluna 'Vai Tocar'
+      /*
+       *  DJ Online
+       */
+
+      // Altera o status para 'DJ ao Vivo'
       $(status).text('DJ ao Vivo');
+
+      // Altera a cor da badge
       $(status).removeClass('badge-primary');
       $(status).addClass('badge-danger');
+
+      // Mostra e preenche o nome do DJ
       $(nome_dj).show();
       $(nome_dj).text(resposta.live.streamer_name);
+
+      // Esconde a coluna da música seguinte
       $(coluna_seguinte).hide();
+
+      // Esconde a lista de playlists e mostra a mensagem das playlists
       $(lista_playlists).hide();
       $(mensagem_dj).show();
     } else {
-      // Transmissão Normal
-      // Mostra a coluna 'Vai Tocar' de novo
+      /*
+       *  Transmissão Normal (aka Auto DJ)
+       */
+
+      // Altera a cor da badge
       $(status).removeClass('badge-danger');
       $(status).addClass('badge-primary');
+
+      // Mostra o texto 'A Tocar'
       $(status).text('A Tocar');
+
+      // Esconde o nome do DJ
       $(nome_dj).hide();
+
+      // Volta a mostrar a coluna da música seguinte
       $(coluna_seguinte).show();
+
+      // Mostra a lista de playlists e esconde a mensagem
       $(lista_playlists).show();
       $(mensagem_dj).hide();
     }
 
-    // Verifica se é 'ouvinte' ou 'ouvintes'
+    /*
+     *  Verifica o número de ouvintes e atualiza
+     *  o texto de acordo
+     */
     if (resposta.listeners.current > 1) {
+      // Caso sejam mais que 1 ouvinte
       $(ouvintes).text(resposta.listeners.unique + ' ouvintes');
     } else if (resposta.listeners.current == 1) {
+      // Caso seja apenas 1 ouvinte
       $(ouvintes).text(resposta.listeners.unique + ' ouvinte');
     } else if (resposta.listeners.unique == 0) {
+      // Caso não haja ouvintes
       $(ouvintes).text('Nenhum Ouvinte');
     }
 
@@ -112,10 +144,7 @@ $(document).ready(function() {
      *  de acordo com o nome da a sua playlist
      */
 
-    // Playlists
-    const playlist_variada = document.getElementById('playlist-variada');
-    const playlist_synthwave = document.getElementById('playlist-synthwave');
-    var playlist_atual = resposta.now_playing.playlist;
+    let playlist_atual = resposta.now_playing.playlist;
 
     // Verifica a o nome da playlist e seleciona o elemento correto
     if (playlist_atual == 'Músicas - Variadas') {
@@ -127,6 +156,6 @@ $(document).ready(function() {
     }
   });
 
-  // Inicia o nchan
+  // Inicia o nchan para obter dados da API
   sub.start();
 });

@@ -22,19 +22,27 @@ body {
   background: #303030;
 }
 
-a {
+footer a {
   color: #375a7f;
 }
 
-a:hover {
+footer a:focus {
   color: #375a7f;
 }
 
-i#footer {
+footer i {
   color: #ff0000;
 }
 
 .icone-social {
+  color: #fff;
+}
+
+a#discord {
+  color: #fff;
+}
+
+a#discord:focus {
   color: #fff;
 }
 

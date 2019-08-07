@@ -31,7 +31,7 @@ $(document).ready(function() {
 
   const reprodutor = document.getElementById('reprodutor');
   const icone = document.getElementById('icone');
-  var status = 'off';
+  let status = 'off';
 
   /*
    * Tarefas inciais
