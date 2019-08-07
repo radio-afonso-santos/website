@@ -34,6 +34,10 @@ i#footer {
   color: #ff0000;
 }
 
+.icone-social {
+  color: #fff;
+}
+
 /* ICONE SOBRE A IMAGEM DA MUSICA 'A TOCAR' */
 .overlay {
   position: relative;
