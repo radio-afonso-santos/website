@@ -1,7 +1,13 @@
 /* IMPORTAÇÃO DE FONTES */
-@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+@font-face {
+  font-family: 'Bangers';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Bangers Regular'), local('Bangers-Regular'), url('../fonts/bangers-v12-latin-regular.woff2') format('woff2'),
+    url('../fonts/bangers-v12-latin-regular.woff') format('woff');
+}
 
-/* ESTILOS GERAIS */
+/* ESTILOS GLOBAIS */
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
