@@ -4,7 +4,10 @@
 
 ## Recursos Utilizados
 
-- Bootswatch para o tema do website [Darkly](https://bootswatch.com/darkly) (Tema Bootstrap)
-- AzuraCast para os dados da transmissão e API ([AzuraCast](https://www.azuracast.com))
-- FancyBox para uma lightbox das imagens das músicas ([Fancybox](https://www.fancyapps.com/fancybox/3/))
-- Netlify para hospedagem do site ([Netlify](https://www.netlify.com/))
+- [Bootswatch](https://bootswatch.com/darkly) para o tema do website
+- [Font Awesome](https://fontawesome.com/) para os ícones do site
+- [Google Fonts](https://fonts.google.com/specimen/Bangers) para a tipografia utilizada no logótipo e subtítulos
+- [AzuraCast](https://www.azuracast.com) para os dados da transmissão e API
+- [nChan](https://github.com/slact/nchan.js/) para obtenção dos dados da API do AzuraCast
+- [Fancybox](https://www.fancyapps.com/fancybox/3/) para uma lightbox das imagens das músicas
+- [Netlify](https://www.netlify.com/) para hospedagem do site
