@@ -1,0 +1,21 @@
+{
+  "short_name": "Rádio Afonso Santos",
+  "name": "Rádio Afonso Santos",
+  "icons": [
+    {
+      "src": "/img/logotipo_192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/img/logotipo_512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#303030",
+  "display": "standalone",
+  "theme_color": "#3367D6",
+  "prefer_related_applications": false
+}
