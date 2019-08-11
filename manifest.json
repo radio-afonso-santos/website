@@ -1,8 +1,8 @@
 {
-  "name": "TruckersFM",
-  "short_name": "TruckersFM",
-  "description": "Your Drive, Your Music",
-  "publicPath": "//_nuxt/",
+  "name": "Rádio Afonso Santos",
+  "short_name": "Rádio Afonso Santos",
+  "description": "Outra rádio online",
+  "publicPath": "/",
   "icons": [
     {
       "src": "/img/icones/logotipo_192.png",
