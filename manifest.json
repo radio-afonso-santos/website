@@ -1,21 +1,23 @@
 {
-  "short_name": "Rádio Afonso Santos",
-  "name": "Rádio Afonso Santos",
+  "name": "TruckersFM",
+  "short_name": "TruckersFM",
+  "description": "Your Drive, Your Music",
+  "publicPath": "//_nuxt/",
   "icons": [
     {
-      "src": "/img/logotipo_192.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "src": "/img/icones/logotipo_192.png",
+      "sizes": "192x192",
+      "type": "image/png"
     },
     {
-      "src": "/img/logotipo_512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "/img/icones/logotipo_512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
   "start_url": "/",
-  "background_color": "#303030",
   "display": "standalone",
+  "background_color": "#303030",
   "theme_color": "#375A7F",
-  "prefer_related_applications": false
+  "lang": "pt-PT"
 }
