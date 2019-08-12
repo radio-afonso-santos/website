@@ -11,3 +11,7 @@
 - [nChan](https://github.com/slact/nchan.js/) para obtenção dos dados da API do AzuraCast
 - [Fancybox](https://www.fancyapps.com/fancybox/3/) para uma lightbox das imagens das músicas
 - [Netlify](https://www.netlify.com/) para hospedagem do site
+
+## Metas
+
+- **100 Commits** em 12/08/2019
