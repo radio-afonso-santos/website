@@ -22,12 +22,12 @@ body {
   background: #303030;
 }
 
-footer a {
-  color: #375a7f;
+.link-footer {
+  color: #375a7f !important;
 }
 
-footer a:focus {
-  color: #375a7f;
+.link-footer:focus {
+  color: #375a7f !important;
 }
 
 footer i {
