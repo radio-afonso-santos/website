@@ -31,7 +31,22 @@ $(document).ready(function() {
 
   const reprodutor = document.getElementById('reprodutor');
   const icone = document.getElementById('icone');
-  let status = 'off';
+
+  /*
+   *  Controla o reprodutor com o teclado
+   */
+  const cod_tecla = 80;
+  let pausa = true;
+
+  document.onkeydown = function(e) {
+    if (e.keyCode == cod_tecla) {
+      if (pausa == true) {
+        reproduzir();
+      } else {
+        parar();
+      }
+    }
+  };
 
   /*
    * Tarefas inciais
@@ -44,9 +59,9 @@ $(document).ready(function() {
   // Volume do reprodutor
   // (este será o valor padrão enquanto não for implementada
   // uma maneira de definir o volume manualmente)
-  reprodutor.volume = 1;
+  reprodutor.volume = 1; // @todo - implementar atalho de teclado para aumentar/diminuir o volume
 
-  // Ícone padrão
+  // Ícone da overlay padrão
   $(icone).addClass('fa-play');
 
   /*
@@ -54,23 +69,20 @@ $(document).ready(function() {
    * reproduzir e parar
    */
 
-  // Reproduzir e Parar
-  $(icone).click(function play_pause() {
-    if (status === 'off') {
-      // Reproduzir
-      $(icone).removeClass('fa-play');
-      reprodutor.play();
-      status = 'on';
-      $(icone).addClass('fa-pause');
-      // console.log('Play');
-    } else if (status === 'on') {
-      // Parar
-      $(icone).removeClass('fa-pause');
-      reprodutor.pause();
-      reprodutor.src = reprodutor.src;
-      status = 'off';
-      $(icone).addClass('fa-play');
-      // console.log('Pause');
-    }
-  });
+  function reproduzir() {
+    $(icone).removeClass('fa-play');
+    reprodutor.play();
+    status = 'on';
+    $(icone).addClass('fa-pause');
+    pausa = false;
+  }
+
+  function parar() {
+    $(icone).removeClass('fa-pause');
+    reprodutor.pause();
+    reprodutor.src = reprodutor.src;
+    status = 'off';
+    $(icone).addClass('fa-play');
+    pausa = true;
+  }
 });
