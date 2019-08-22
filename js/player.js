@@ -25,28 +25,19 @@ $(document).ready(function() {
 
   const url = 'https://painel.radio-afonsosantos.tk/radio/8000/radio.mp3?1562112982';
 
+  // Controlo do reprodutor através do ícone
+  let status = 'off';
+
+  // Controlo do reprodutor através do teclado
+  const cod_tecla = 80;
+  let pausa = true;
+
   /*
    *  Elementos da DOM
    */
 
   const reprodutor = document.getElementById('reprodutor');
   const icone = document.getElementById('icone');
-
-  /*
-   *  Controla o reprodutor com o teclado
-   */
-  const cod_tecla = 80;
-  let pausa = true;
-
-  document.onkeydown = function(e) {
-    if (e.keyCode == cod_tecla) {
-      if (pausa == true) {
-        reproduzir();
-      } else {
-        parar();
-      }
-    }
-  };
 
   /*
    * Tarefas inciais
@@ -57,16 +48,14 @@ $(document).ready(function() {
   reprodutor.src = url;
 
   // Volume do reprodutor
-  // (este será o valor padrão enquanto não for implementada
-  // uma maneira de definir o volume manualmente)
   reprodutor.volume = 1; // @todo - implementar atalho de teclado para aumentar/diminuir o volume
 
-  // Ícone da overlay padrão
+  // Ícone da overlay do reprodutor (valor padrão - botão Play)
   $(icone).addClass('fa-play');
 
   /*
    * Funções para manipulação da reprodução
-   * reproduzir e parar
+   * (reproduzir e parar)
    */
 
   function reproduzir() {
@@ -85,4 +74,30 @@ $(document).ready(function() {
     $(icone).addClass('fa-play');
     pausa = true;
   }
+
+  /*
+   *  Controlo do reprodutor através do ícone
+   */
+
+  $(icone).click(function() {
+    if (status === 'off') {
+      reproduzir();
+    } else if (status === 'on') {
+      parar();
+    }
+  });
+
+  /*
+   *  Controlo do reprodutor através do teclado
+   */
+
+  document.onkeydown = function(e) {
+    if (e.keyCode == cod_tecla) {
+      if (pausa == true) {
+        reproduzir();
+      } else {
+        parar();
+      }
+    }
+  };
 });
