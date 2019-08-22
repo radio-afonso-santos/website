@@ -22,7 +22,7 @@ $(document).ready(function() {
    *  Variáveis Globais
    */
 
-  const url = 'https://painel.radio-afonsosantos.tk/radio/8000/radio-64.aac?1566485592';
+  const url = 'https://painel.radio-afonsosantos.tk/radio/8000/64k.aac?1566497775';
 
   // Controlo do reprodutor através do ícone
   let status = 'off';
