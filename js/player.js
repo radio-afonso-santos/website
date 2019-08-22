@@ -1,6 +1,5 @@
 /*
- * Script para manipulação do reprodutor
- * da transmissão da Rádio Afonso Santos
+ * @description Script para manipulação do reprodutor da transmissão da Rádio Afonso Santos
  *
  * Website para a Rádio Afonso Santos
  * https://github.com/radio-afonso-santos/website
@@ -9,13 +8,13 @@
  * https://azuracast.com
  * https://github.com/AzuraCast/AzuraCast
  *
- * Afonso Santos
+ * @author Afonso Santos
  * http://afonsosantos-dev.tk
  * https://github.com/afonsosantos
  *
  * Criado em 07/2019
  *
- * Licença: Apache-2.0
+ * @license Apache-2.0
  */
 
 $(document).ready(function() {
