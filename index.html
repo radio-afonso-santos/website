@@ -112,7 +112,7 @@
           <h2 class="fonte-personalizada">Horário</h2>
           <p class="text-justify">
             <span class="badge badge-danger mr-1">Novo</span>
-            A playlist que está ao vivo na rádio irá ficar selecionada, desde a sua hora de início até ao final da programação.
+            A playlist que está ao vivo na rádio irá ficar selecionada, desde a sua hora incial até acabar a reprodução.
           </p>
           <ul id="lista-playlists" class="list-group mb-5">
             <li class="list-group-item d-flex justify-content-between align-items-center py-1" id="playlist-variada">
@@ -133,7 +133,7 @@
           <h2 class="fonte-personalizada">Pedido de Música</h2>
           <p class="text-justify">
             <span class="badge badge-danger mr-1">Novo</span>
-            Clica no botão abaixo para pedir que uma música da nossa biblioteca seja reproduzida (apenas as músicas da lista reprodução
+            Clique no botão abaixo para pedir que uma música da nossa biblioteca seja reproduzida (apenas as músicas da lista reprodução
             <span class="font-weight-bold">Música Variada</span> estão disponíveis para pedir).
           </p>
           <button type="button" class="btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#pedidos">
@@ -149,6 +149,10 @@
           <!-- FORMULÁRIO CONTATO-->
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-4">
             <h2 class="fonte-personalizada mb-3">Contatos</h2>
+            <p>
+              Utilize o formulário abaixo para contactar a Rádio Afonso Santos. Também pode utilizar o email <strong>geral@radio-afonsosantos.tk</strong> ou o
+              email de algum membro da equipa.
+            </p>
             <form name="contatos" method="POST" data-netlify="true">
               <div class="form-group">
                 <label>Nome</label>
@@ -164,26 +168,66 @@
               </div>
               <div class="form-group">
                 <label>Mensagem</label>
-                <textarea class="form-control" name="mensagem" cols="30" rows="3" placeholder="A sua mensagem" required></textarea>
+                <textarea class="form-control" name="mensagem" cols="30" rows="4" placeholder="A sua mensagem" required></textarea>
               </div>
               <button type="submit" class="btn btn-primary btn-sm btn-block"><i class="fas fa-paper-plane"></i> Enviar</button>
             </form>
           </div>
-          <!-- DISCORD-->
+          <!-- REDES SOCIAIS-->
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-            <h2 class="fonte-personalizada mb-3">Redes Sociais</h2>
-            <div class="row">
-              <div class="media p-3">
-                <i class="fab fa-discord fa-3x mr-3"></i>
-                <div class="media-body">
-                  <h4>
-                    <span class="badge badge-primary">
-                      <a id="discord" href="https://discord.gg/dm8Ze7z">Discord</a>
-                    </span>
-                  </h4>
-                  <p class="text-justify">
-                    Entra no nosso servidor para conheceres a nossa equipa, interagires com o nosso bot e seres informado de futuros eventos ao vivo.
-                  </p>
+            <div class="container">
+              <div class="row">
+                <h2 class="fonte-personalizada mb-3">Redes Sociais</h2>
+                <!-- DISCORD -->
+                <div class="media p-3 redes-sociais">
+                  <i class="fab fa-discord fa-3x mr-3"></i>
+                  <div class="media-body">
+                    <h4>
+                      <span class="badge badge-primary">
+                        <a href="https://discord.gg/dm8Ze7z">Discord</a>
+                      </span>
+                    </h4>
+                    <p class="text-justify">
+                      Entre no nosso servidor para conheceres a nossa equipa, interagir com o nosso bot, ser informado dos nossos eventos futuros e
+                      noticías/anúncios importantes.
+                    </p>
+                  </div>
+                </div>
+                <!-- TWITTER -->
+                <div class="media p-3 redes-sociais">
+                  <i class="fab fa-twitter fa-3x mr-2"></i>
+                  <div class="media-body">
+                    <h4>
+                      <span class="badge badge-primary">
+                        <a href="https://twitter.com/RadAfonsoSantos">Twitter</a>
+                      </span>
+                    </h4>
+                    <p class="text-justify">
+                      O nosso Twitter permite saber o estado da nossa rádio (se ela está com problemas, offline). Os nossos eventos também serão lá publicados,
+                      tal como as nossas noticías/anúcios.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- EQUIPA -->
+            <div class="container">
+              <div class="row">
+                <h2 class="fonte-personalizada mb-3">Equipa</h2>
+                <div class="card bg-secondary">
+                  <div class="card-body">
+                    <div class="media">
+                      <img src="img/equipa/afonsosantos.png" alt="Afonso Santos" class="img-fluid avatar mr-3" />
+                      <div class="media-body">
+                        <h5 class="card-title">Afonso Santos <span class="badge badge-info">BOSS</span> <span class="badge badge-danger">DJ</span></h5>
+                        <p class="card-text">DJ principal e dono da Rádio Afonso Santos. Ocasionalmente faz eventos ao vivo.</p>
+                      </div>
+                    </div>
+                    <hr />
+                    <i data-toggle="tooltip" title="afonso santos#9214" class="fab fa-discord fa-2x p-2"></i>
+                    <i data-toggle="tooltip" title="@afonsosantos53" class="fab fa-twitter fa-2x p-2"></i>
+                    <i data-toggle="tooltip" title="afonso@radio-afonsosantos.tk" class="fas fa-envelope-open fa-2x p-2"></i>
+                  </div>
                 </div>
               </div>
             </div>
@@ -223,17 +267,23 @@
       <div class="container">
         <span class="small text-muted">
           Made with <i id="footer" class="fas fa-heart"></i> by <a href="https://afonsosantos-dev.tk" class="link-footer" target="_blank">Afonso Santos</a> |
-          <a href="https://status.afonsosantos-dev.tk" class="link-footer" target="_blank">Status da Rádio</a>
+          <a href="https://status.afonsosantos-dev.tk" class="link-footer" target="_blank">Estado da Rádio</a>
         </span>
       </div>
     </footer>
 
     <!-- SCRIPTS -->
     <script src="js/jquery.js"></script>
+    <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
     <script src="js/NchanSubscriber.js"></script>
     <script src="js/nowplaying.js"></script>
     <script src="js/player.js"></script>
-    <script src="js/jquery.fancybox.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('[data-toggle="tooltip"]').tooltip({ placement: 'bottom' });
+      });
+    </script>
   </body>
 </html>

@@ -53,19 +53,15 @@ footer i {
   color: #ff0000;
 }
 
-.icone-social {
+.redes-sociais a {
   color: #fff;
 }
 
-a#discord {
+.redes-sociais a:focus {
   color: #fff;
 }
 
-a#discord:focus {
-  color: #fff;
-}
-
-/* ICONE SOBRE A IMAGEM DA MUSICA 'A TOCAR' */
+/* REPRODUTOR */
 .overlay {
   position: relative;
 }
@@ -103,4 +99,22 @@ a#discord:focus {
 .texto-brand {
   font-size: 2.2rem !important;
   font-family: 'Bangers';
+}
+
+/* EQUIPA */
+.avatar {
+  width: 75px;
+  height: auto;
+}
+
+.link {
+  color: #fff;
+}
+
+.link:hover {
+  color: #fff;
+}
+
+.link:visited {
+  color: #fff;
 }
