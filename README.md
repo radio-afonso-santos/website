@@ -12,7 +12,7 @@
 - [Font Awesome](https://fontawesome.com/) para os ícones do site
 - [Google Fonts](https://fonts.google.com/specimen/Bangers) para a tipografia utilizada no logótipo e subtítulos
 
-### Bibliotecas Javascript
+### Bibliotecas
 
 - [Fancybox](https://www.fancyapps.com/fancybox/3/) para uma lightbox das imagens das músicas
 - [JQuery](https://jquery.com/) para auxílio no código Javascript
