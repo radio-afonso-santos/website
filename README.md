@@ -29,7 +29,7 @@
 
 ## Documentação
 
-Visite [esta página](https://docs.afonsosantos-dev.tk/projetos/radioafonsosantos/website/) para mais informações acerca deste projeto.
+Visite [esta página](https://docs.afonsosantos-dev.tk/projetos/radioafonsosantos/website/) para a documentação deste projeto.
 
 ## Metas
 
