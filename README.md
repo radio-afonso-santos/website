@@ -10,7 +10,7 @@
 
 - [Bootswatch](https://bootswatch.com/darkly) para o tema do website
 - [Font Awesome](https://fontawesome.com/) para os ícones do site
-- [Google Fonts](https://fonts.google.com/specimen/Bangers) para a tipografia utilizada no logótipo e subtítulos
+- [Google Fonts](https://fonts.google.com/) para a tipografia utilizada no website
 
 ### Bibliotecas
 
