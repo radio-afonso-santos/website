@@ -26,6 +26,7 @@
 ### Outros
 
 - [AzuraCast](https://www.azuracast.com) para os dados da transmissão e API
+- [Google Analytics]() para recolha de estatística e dados públicos dos utilizadores do website
 
 ## Documentação
 
