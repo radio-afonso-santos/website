@@ -1,6 +1,7 @@
 # Website da Rádio Afonso Santos
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a734a27c-44a4-4299-9a96-8fae7fe593be/deploy-status)](https://app.netlify.com/sites/radio-afonsosantos/deploys)
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N813JIO)
 
 #### Um simples website criado com HTML e CSS (Bootswatch), totalmente responsivo e com várias funcionalidades escritas em Javascript.
 
